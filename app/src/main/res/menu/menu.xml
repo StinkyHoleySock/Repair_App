@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ic_account"
+        android:icon="@drawable/ic_account"
+        android:title="@string/account"/>
+    <item
+        android:id="@+id/ic_order"
+        android:icon="@drawable/ic_order"
+        android:title="@string/order"/>
+    <item
+        android:id="@+id/ic_add_order"
+        android:icon="@drawable/ic_add_order"
+        android:title="@string/addorder"/>
+    <item
+        android:id="@+id/ic_call"
+        android:icon="@drawable/ic_call"
+        android:title="@string/call"/>
+    <item
+        android:id="@+id/ic_chat"
+        android:icon="@drawable/ic_chat"
+        android:title="@string/chat"/>
+
+</menu>
