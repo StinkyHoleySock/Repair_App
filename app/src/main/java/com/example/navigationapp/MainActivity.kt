@@ -7,7 +7,7 @@ import com.example.navigationapp.fragments.*
 import kotlinx.android.synthetic.main.activity_main.*
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), CommunicatorToCartFragment {
 
     private val accountFragment = AccountFragment()
     private val ordersFragment = OrdersFragment()
@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        replaceFragment(accountFragment)
+        replaceFragment(addOrderFragment)
 
         bottom_navigation.setOnNavigationItemSelectedListener {
             when(it.itemId){
@@ -35,6 +35,19 @@ class MainActivity : AppCompatActivity() {
     private fun replaceFragment(fragment: Fragment){
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragment_container, fragment)
+        transaction.commit()
+    }
+
+
+    // Передача данных о заказе
+    override fun passDataCart(order: String) {
+        val bundle = Bundle()
+        bundle.putString("order", order)
+
+        val transaction = this.supportFragmentManager.beginTransaction()
+        val cartFragment = OrdersFragment()
+        cartFragment.arguments = bundle
+
         transaction.commit()
     }
 }

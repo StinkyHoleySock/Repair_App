@@ -19,12 +19,15 @@ class AddOrderAdapter(listArray: ArrayList<ListItem>, context: Context): Recycle
 
         var image = view.findViewById<ImageView>(R.id.iv_picture)
         var title = view.findViewById<TextView>(R.id.tv_title)
+        var description = view.findViewById<TextView>(R.id.tv_description)
 
         fun bind(listItem: ListItem, context: Context){
             image.setImageResource(listItem.imageId)
             title.text = listItem.titleText
+            description.text = listItem.descriptionText
             itemView.setOnClickListener(){
                 Toast.makeText(context, "Pressed ${title.text}", Toast.LENGTH_SHORT).show()
+
             }
         }
     }
@@ -36,7 +39,7 @@ class AddOrderAdapter(listArray: ArrayList<ListItem>, context: Context): Recycle
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        var listItem = listArrayRecycler[position]
+        val listItem = listArrayRecycler[position]
         holder.bind(listItem, contextRecycler)
     }
 

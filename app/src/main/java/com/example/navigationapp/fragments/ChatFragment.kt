@@ -49,7 +49,7 @@ class ChatFragment : Fragment() {
                 if (et_message.text.isNotEmpty()){
 
                     list.add(et_message.text.toString())
-                    list.add("Здравствуйте! Вас приветствует поддержка приложения 'Hello, Kotlin'! ")
+                    list.add("Здравствуйте! Вас приветствует поддержка приложения 'Repair App'! ")
                     list.add("Чем можем помочь?")
                     myAdapter?.notifyDataSetChanged()
 
